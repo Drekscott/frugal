@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Frugal</title>
+    <title>Support Help</title>
     <%= csrf_meta_tags %>
 		<link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,8 +12,8 @@
 <!-- <li><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path, class: 'logo-img' %></li> -->
 <li><%= link_to 'Items', items_path, :id=>"headlink", class: 'b-link' %></li>
 <li><%= link_to 'Categories	', categories_path, :id=>"headlink", class: 'b-link'%></li>
-<li><%= link_to 'Budget', budgets_path, :id=>"headlink", class: 'b-link'%></li>
-<li><%= link_to 'Purchases', purchases_path, :id=>"headlink", class: 'b-link'%></li>
+<!-- <li><%= link_to 'Budget', budgets_path, :id=>"headlink", class: 'b-link'%></li> -->
+<!-- <li><%= link_to 'Purchases', purchases_path, :id=>"headlink", class: 'b-link'%></li> -->
 <% if current_user %>
   <li><%= render 'shared/header',:id=>"headlink", class: 'b-link' %></li>
 <% end %>

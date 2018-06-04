@@ -27,9 +27,13 @@
   <%= f.text_field :name, :style => "color: #4CAF50;border: 1px solid #aaa;" %>
 
 
+  <%= f.label :body, :style => 'font-size: 20px; margin-left: 270px;' %><br>
+  <%= f.text_area :body, :style => "color: #4CAF50;border: 1px solid #aaa;" %>
 
-  <%= f.label :price, :style => 'font-size: 20px;margin-left: 270px;' %><br>
-  <%= f.number_field :price, :style => "color: #4CAF50;border: 1px solid #aaa;" %>
+
+
+  <%= f.label :relevant_link, :style => 'font-size: 20px;margin-left: 270px;' %><br>
+  <%= f.text_field :relevant_link, :style => "color: #4CAF50;border: 1px solid #aaa;" %>
 
 
   <%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>

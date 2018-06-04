@@ -42,7 +42,8 @@ class ItemsController < ApplicationController
          params.require(
             :item).permit(
             :name,
-            :price,
+            :relevant_link,
+            :body,
             :category_id,
             :user_id)
      end

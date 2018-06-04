@@ -29,11 +29,13 @@ ActiveRecord::Schema.define(version: 20170124183043) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
+    t.text     "body"
+    t.string   "relevant_link"
     t.decimal  "price"
-    t.integer  "category_id", null: false
-    t.integer  "user_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "category_id",   null: false
+    t.integer  "user_id",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "purchases", force: :cascade do |t|

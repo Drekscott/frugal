@@ -8,17 +8,27 @@
 			<%= form_for(@item) do |f|%>
 				<h1 style="color:black;">New Item</h1>
 			   <fieldset>
-				<%= f.text_field :name, placeholder: 'Item Name', :style => '  border: 1px solid #aaa;' %>
+				<%= f.text_field :name, placeholder: 'Title', :style => '  border: 1px solid #aaa;' %>
 			</fieldset>
+
+			<fieldset>
+	 <%= f.text_area :body, placeholder: 'Body', :style => '  border: 1px solid #aaa; margin-left:150px; width:250px;' %>
+</fieldset>
+
 				   <fieldset>
-				<%= f.number_field :price, placeholder: 'Item Price', :style => '  border: 1px solid #aaa;', :step => 0.01 %>
+				<%= f.text_field :relevant_link, placeholder: 'Link', :style => '  border: 1px solid #aaa;' %>
 	   </fieldset>
 				   <fieldset>
 				<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
 			</fieldset>
 			 <div>
 				 <%= f.hidden_field :user_id, :value => current_user.id %>
-					 <%= f.submit :style => "background: #4CAF50; color:white;" %>
+				 <% if !Category.select{|c| c.user_id == current_user.id}.empty? %>
+					<%= f.submit :style => "background: #4CAF50; color:white;" %>
+				<% else %>
+				 <%= f.submit :style => "background: gray; color:white;", :disabled => true%>
+				<%end%>
+
 
 			 <% end %>
 			 <%= button_to "Create Category", new_category_path, :method => "get", :style => "background: #4CAF50; color:white;" %>

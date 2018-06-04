@@ -1,16 +1,18 @@
 
-<p>
-  <strong>Item</strong>
+<h1>
+  <strong>Item:</strong>
   <%= @item.name %>
-</p>
+</h1>
 
-<p>
-  <strong>Price</strong>
-  <%= @item.price %>
-</p>
-<p>
-  <strong>Category</strong>
+<h1>  <strong>Link:</strong></h1>
+  <a href="<%= @item.relevant_link %>" style="margin-left:35%;"><%= @item.relevant_link %></a>
+
+<h1>  <strong>Helpful Info:</strong></h1>
+  <p style="width:100%;margin:0 auto;"> <%= @item.body %> </p>
+
+<h1>
+  <strong>Category:</strong>
   <%= Category.all.select{|c| c.id==@item.category_id}.first.name %>
-</p>
+</h1>
 <%= link_to 'Edit', edit_item_path(@item) %>
 <%= link_to 'Back', items_path %>
