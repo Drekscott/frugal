@@ -1,18 +1,49 @@
 
-<h1>
-  <strong>Item:</strong>
-  <%= @item.name %>
-</h1>
 
-<h1>  <strong>Link:</strong></h1>
-  <a href="<%= @item.relevant_link %>" style="margin-left:35%;"><%= @item.relevant_link %></a>
+<div class="content-wrapper">
+    <section id="main-content">
 
-<h1>  <strong>Helpful Info:</strong></h1>
-  <p style="width:100%;margin:0 auto;"> <%= @item.body %> </p>
+        <!-- Main Page Content and Sidebar -->
 
-<h1>
-  <strong>Category:</strong>
-  <%= Category.all.select{|c| c.id==@item.category_id}.first.name %>
-</h1>
-<%= link_to 'Edit', edit_item_path(@item) %>
-<%= link_to 'Back', items_path %>
+        <div class="row">
+
+            <!-- Main Blog Content -->
+            <div class="large-9 columns" role="content">
+
+                <article style="margin:0 auto;">
+
+                    <h1>Note:<%= @item.name %></h1>
+                    <p class="article_pub-date">Published:
+                        <time datetime="" pubdate=""><%= @item.created_at%></time>
+                    </p>
+
+                    <div class="row">
+                        <div class="large-12 columns">
+                          <h3>
+                            Category:
+                          </h3>
+                          <p>
+                            <%= Category.all.select{|c| c.id==@item.category_id}.first.name %>
+                          </p>
+                          <h3>
+                            Link:
+                          </h3>
+                          <p>
+                            <a href="<%= @item.relevant_link %>" ><%= @item.relevant_link %></a>
+                          </p>
+                            <h3>Content:</h3>
+
+                            <p> <%= @item.body %> </p>
+
+
+                        </div>
+                    </div>
+                    <%= link_to 'Edit', edit_item_path(@item) %>
+                    <%= link_to 'Back', items_path %>
+                </article>
+
+                <hr />
+
+            </div>
+
+<!-- End Main Content -->

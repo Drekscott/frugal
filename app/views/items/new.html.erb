@@ -1,23 +1,24 @@
 
 
 
-<div class="container" style="margin-top: -400px;">
+<div class="container" style="margin-top: -400px; color:black;">
 
   <!-- <form id="contact" action="" method="post"> -->
-		<div>
+		<div style="color:black;">
 			<%= form_for(@item) do |f|%>
-				<h1 style="color:black;">New Item</h1>
+			<h1 style="color:black;">New Item</h1>
 			   <fieldset>
-				<%= f.text_field :name, placeholder: 'Title', :style => '  border: 1px solid #aaa;' %>
+				<%= f.text_field :name, placeholder: 'Title', :style => ' color:black; border: 1px solid #aaa;' %>
 			</fieldset>
 
 			<fieldset>
-	 <%= f.text_area :body, placeholder: 'Body', :style => '  border: 1px solid #aaa; margin-left:150px; width:250px;' %>
+	 <%= f.text_area :body, placeholder: 'Body', :style => '  border: 1px solid #aaa; margin-left:150px; width:250px; height:150px;' %>
 </fieldset>
 
 				   <fieldset>
 				<%= f.text_field :relevant_link, placeholder: 'Link', :style => '  border: 1px solid #aaa;' %>
 	   </fieldset>
+
 				   <fieldset>
 				<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
 			</fieldset>
